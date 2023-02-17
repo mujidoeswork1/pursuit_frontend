@@ -1,0 +1,200 @@
+:root {
+  --mainBlue: #1d2951;
+  --navBlue: #f0f2f9;
+  --navLink: #f08888;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: grey;
+  color: white;
+}
+
+/* navbar */
+
+nav {
+  /* height: 4vh; */
+  /* background-color: var(--navBlue); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+}
+
+nav > h1 {
+  color: var(--mainBlue);
+  /* font-size: 2vh; */
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul {
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50vw;
+}
+
+nav > ul > li {
+  display: flex;
+  border-radius: 5px;
+  background-color: rgba(67, 160, 221, 0.2);
+  padding: 1ch 5ch;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: var(--navLink);
+}
+
+/* Product Page */
+.productContent,
+.discussionContent {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+/* PP Main */
+
+.productList {
+  width: 80%;
+  background-color: var(--mainBlue);
+}
+
+#products {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30ch;
+  height: 30%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.103);
+}
+
+#sortform,
+#filterform {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* PP Sidebar */
+
+.sidesettings {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-bottom: 30%;
+}
+
+#searching {
+  border-top: 2px solid black;
+  padding: 5% 5%;
+}
+
+/* Landing Page */
+.Landing {
+  height: 99vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.landing > .landingTitle {
+  font-size: 50%;
+  color: black;
+}
+
+/* Discussion CSS */
+
+.topics {
+  height: 80%;
+  width: 80%;
+}
+
+.topicCard > ul {
+  list-style: none;
+  width: 50vw;
+  height: 13ch;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin: 2ch auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+}
+
+.topicTitle,
+.topicDesc,
+.topicRating,
+.topicCategory,
+.comments {
+  pointer-events: none;
+}
+
+.topicTitle {
+  font-size: 2em;
+  width: 100%;
+  padding-top: 1ch;
+}
+
+.topicDesc {
+  padding: 0;
+  margin-right: 3ch;
+}
+
+.topicRating {
+  margin-left: auto;
+  margin-right: 3ch;
+}
+
+.topicCategory {
+  margin-top: 1ch;
+}
+
+.comments {
+  width: 100%;
+  margin-top: 5%;
+  position: relative;
+}
+
+.comment {
+  border-radius: 4px;
+  border: 2px solid black;
+  margin-top: 1ch;
+}
+
+.topicCard :hover {
+  height: 30ch;
+  background-color: red;
+}

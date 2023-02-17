@@ -1,0 +1,1 @@
+cd frontend/pursuit > npm start for front end

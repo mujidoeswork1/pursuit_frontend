@@ -1,0 +1,58 @@
+html {
+  height: 100%;
+}
+
+.body {
+  /* height: auto;
+    width: 100%;  */
+  display: flex;
+  flex-direction: row;
+}
+.GoalContntPage {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.goalContentPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+
+  /* width: 80%;
+    height:100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-bottom: 30%; */
+}
+
+div#root {
+  height: 100%;
+}
+
+.goal-box {
+  /* background-color: #474747; */
+  /* justify-content: space-between;     */
+  border: 2px solid rgb(255, 255, 255);
+  margin-bottom: 15px;
+  width: 850px;
+  padding: 5px;
+  font-size: small;
+}
+.allgoals {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.challenge-btn {
+  font-size: small;
+}
+.progress-btn {
+  background-color: brown;
+  height: 20px;
+  width: auto;
+}
+
+.goal-name {
+  font-size: small;
+  margin-top: 0px;
+}
