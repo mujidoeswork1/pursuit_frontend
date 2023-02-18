@@ -10,6 +10,7 @@ import { Allgoals } from "../../components/Allgoals";
 import { Mygoals } from "../../components/Mygoals";
 import { Rewards } from "../../components/Rewards";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import axios from 'axios';
 
 export default function Goals() {
   const goals = [
@@ -49,40 +50,7 @@ export default function Goals() {
   const [showMyGoals, setShowMyGoals] = useState(false);
   const [showRewards, setShowRewards] = useState(false);
 
-  const handleClick = async (goal) => {
-    const date = new Date();
-
-    const setDateY = date.getFullYear();
-    const dueDateY = setDateY;
-    const setDateM = date.getMonth();
-    const dueDateM = setDateM + 1;
-    const setDateD = date.getDate();
-    const dueDateD = setDateD;
-
-    const goalObj = {
-      setDate: `${setDateY}-0${setDateM}-${setDateD}`,
-      dueDate: `${dueDateY}-0${dueDateM}-${dueDateD}`,
-      goal,
-    };
-
-    try {
-      // POST REQUEST TO ADD INTO MYGOAL
-      await axios.post(
-        "http://localhost:8080/myGoal",
-        JSON.stringify(goalObj),
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-
-      // GET REQUET TO FETCH THE ADDED MYGOAL
-      const { data } = await axios.get("http://localhost:8080/myGoal");
-      setMyGoals(data);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   const fetchGoals = async () => {
     fetch("http://localhost:8080/goal", {
@@ -130,11 +98,11 @@ export default function Goals() {
           setShowMyGoals={setShowMyGoals}
           showRewards={showRewards}
           setShowRewards={setShowRewards}
+          fetchGoals={fetchGoals}
         />
-        {showAllGoals && <Allgoals Goals={Goals} heading="All Goals" />}
+        {showAllGoals && <Allgoals Goals={Goals} MyGoals={MyGoals} heading="All Goals" setMyGoals={setMyGoals}/>}
         {showMyGoals && <Mygoals Goals={MyGoals} heading="My Goals" />}
         {showRewards && <Rewards />}
-        {/* <Mygoals Goals={Goals} /> */}
       </div>
       <div>
         {/* <Nav user={user} /> */}

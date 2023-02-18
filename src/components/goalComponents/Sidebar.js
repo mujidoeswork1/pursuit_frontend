@@ -13,9 +13,12 @@ export default function Sidebar(props) {
     showRewards,
     setShowRewards,
   } = props;
+
   const handleButtonClick = (category) => {
     // fetch all Goals from database
+    console.log("Goals", Goals);
     const filtered = goalsarr.filter((goal) => goal.category === category);
+    setGoals(filtered);
     setGoals(filtered);
     // console.log(first)
   };
